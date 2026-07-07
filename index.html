@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise UX Strategy - Case Study & Portfolio</title>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Shell -->
+    <div id="app-shell" class="presentation-mode">
+        <!-- Top Control Bar -->
+        <header id="top-bar">
+            <div class="logo-area">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="url(#logo-grad)"/>
+                    <path d="M7 17V7L12 12L17 7V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#10B981"/>
+                            <stop offset="1" stop-color="#14B8A6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="app-title">AeroFlow<span class="text-teal">UX</span></span>
+                <span class="divider">|</span>
+                <span class="project-tag">Enterprise Case Study</span>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="nav-controls">
+                <button id="prev-btn" class="nav-btn" title="Previous Screen">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                
+                <div class="screen-selector-wrapper">
+                    <select id="screen-dropdown">
+                        <option value="1">Screen 1 – Cover Page</option>
+                        <option value="2">Screen 2 – Business Problems</option>
+                        <option value="3">Screen 3 – Stakeholder Analysis</option>
+                        <option value="4">Screen 4 – User Research</option>
+                        <option value="5">Screen 5 – User Personas</option>
+                        <option value="6">Screen 6 – Customer Journey Map</option>
+                        <option value="7">Screen 7 – Information Architecture</option>
+                        <option value="8">Screen 8 – Wireframes</option>
+                        <option value="9">Screen 9 – Enterprise Dashboard UI</option>
+                        <option value="10">Screen 10 – UX Strategy Roadmap</option>
+                    </select>
+                </div>
+
+                <button id="next-btn" class="nav-btn" title="Next Screen">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+                
+                <span id="screen-counter">1 / 10</span>
+            </div>
+
+            <!-- View Toggles & Zoom -->
+            <div class="view-controls">
+                <div class="toggle-group">
+                    <button id="mode-present" class="toggle-btn active">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        <span>Present</span>
+                    </button>
+                    <button id="mode-canvas" class="toggle-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <span>Canvas</span>
+                    </button>
+                </div>
+
+                <span class="divider">|</span>
+
+                <div class="zoom-controls">
+                    <button id="zoom-out" class="zoom-btn" title="Zoom Out">-</button>
+                    <span id="zoom-indicator">100%</span>
+                    <button id="zoom-in" class="zoom-btn" title="Zoom In">+</button>
+                    <button id="zoom-reset" class="zoom-btn reset" title="Reset View">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-area">
+            <!-- Sidebar Panel for Strategic Notes -->
+            <aside id="strategy-sidebar" class="sidebar-open">
+                <div class="sidebar-header">
+                    <h2 class="sidebar-title">Strategic Insights</h2>
+                    <button id="toggle-sidebar-btn" class="close-btn" title="Toggle Sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="sidebar-content">
+                    <div id="strategy-details">
+                        <!-- Content dynamically loaded via JS based on active slide -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Screen Workspace Board (Figma Canvas style) -->
+            <div id="workspace-viewport">
+                <div id="canvas-board" class="canvas-grid-bg">
+                    
+                    <!-- ========================================== -->
+                    <!-- SCREEN 1: COVER PAGE -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen active-slide animate-fade-in" id="screen-1" data-index="1">
+                        <div class="screen-content cover-page">
+                            <div class="cover-left">
+                                <span class="badge">Enterprise UX Strategy & Design Case Study</span>
+                                <h1>AeroFlow <br><span class="gradient-text">Enterprise SaaS</span> Strategy</h1>
+                                <p class="subtitle">Transforming Complex Enterprise Workflows into Seamless Digital Experiences.</p>
+                                
+                                <div class="meta-footer">
+                                    <div class="meta-item">
+                                        <div class="meta-label">DESIGN & STRATEGY BY</div>
+                                        <div class="meta-value">Lead UX Architect</div>
+                                    </div>
+                                    <div class="meta-item">
+                                        <div class="meta-label">YEAR & STAGE</div>
+                                        <div class="meta-value">2026 • Product Strategy Phase</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cover-right">
+                                <!-- Large Business Collaboration Illustration -->
+                                <div class="svg-wrapper">
+                                    <svg viewBox="0 0 500 500" class="business-illustration">
+                                        <!-- Grid & Tech Background -->
+                                        <defs>
+                                            <linearGradient id="cover-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#10B981" stop-opacity="0.1" />
+                                                <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.2" />
+                                            </linearGradient>
+                                            <linearGradient id="node-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#10B981" />
+                                                <stop offset="100%" stop-color="#14B8A6" />
+                                            </linearGradient>
+                                            <filter id="shadow-filter" x="-10%" y="-10%" width="120%" height="120%">
+                                                <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08" />
+                                            </filter>
+                                        </defs>
+                                        
+                                        <!-- Decorative Background Shapes -->
+                                        <circle cx="250" cy="250" r="180" fill="url(#cover-blue-grad)" />
+                                        <rect x="320" y="80" width="80" height="80" rx="20" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4" transform="rotate(15 320 80)"/>
+                                        <circle cx="80" cy="350" r="12" fill="none" stroke="#14B8A6" stroke-width="3" />
+                                        
+                                        <!-- Figma-like Dashboard Canvas Mockup inside Illustration -->
+                                        <g transform="translate(70, 110)" filter="url(#shadow-filter)">
+                                            <!-- Main Canvas Frame -->
+                                            <rect width="360" height="260" rx="16" fill="white" />
+                                            <!-- Dashboard Header -->
+                                            <rect x="20" y="20" width="100" height="12" rx="4" fill="#E2E8F0" />
+                                            <circle cx="340" cy="26" r="6" fill="#F1F5F9" />
+                                            <!-- Side nav representation -->
+                                            <rect x="20" y="50" width="60" height="190" rx="8" fill="#F8FAFC" />
+                                            <rect x="30" y="65" width="40" height="8" rx="2" fill="#E2E8F0" />
+                                            <rect x="30" y="85" width="40" height="8" rx="2" fill="#E2E8F0" />
+                                            <rect x="30" y="105" width="40" height="8" rx="2" fill="#E2E8F0" />
+                                            
+                                            <!-- Chart widgets representation -->
+                                            <rect x="95" y="50" width="245" height="100" rx="10" fill="#F8FAFC" />
+                                            <!-- Waveform Chart path -->
+                                            <path d="M105 120 C130 90, 150 130, 180 80 C210 140, 240 70, 270 100 C300 60, 320 90, 330 75" fill="none" stroke="url(#node-grad)" stroke-width="4" stroke-linecap="round" />
+                                            
+                                            <!-- Two bottom small cards -->
+                                            <rect x="95" y="160" width="115" height="80" rx="10" fill="#F8FAFC" />
+                                            <rect x="110" y="175" width="50" height="8" rx="2" fill="#E2E8F0" />
+                                            <circle cx="120" cy="205" r="15" fill="#E6F4EA" />
+                                            <path d="M115 205 L125 205 M120 200 L120 210" stroke="#10B981" stroke-width="2" />
+                                            
+                                            <rect x="225" y="160" width="115" height="80" rx="10" fill="#F8FAFC" />
+                                            <rect x="240" y="175" width="50" height="8" rx="2" fill="#E2E8F0" />
+                                            <!-- Dynamic circular graph representation -->
+                                            <circle cx="282" cy="205" r="18" fill="none" stroke="#E2E8F0" stroke-width="4" />
+                                            <circle cx="282" cy="205" r="18" fill="none" stroke="#14B8A6" stroke-width="4" stroke-dasharray="113" stroke-dashoffset="30" stroke-linecap="round" />
+                                        </g>
+
+                                        <!-- Front Avatars representing Collaborators -->
+                                        <!-- Designer 1 -->
+                                        <g transform="translate(60, 340)" filter="url(#shadow-filter)">
+                                            <circle cx="25" cy="25" r="25" fill="#E0F2FE" />
+                                            <text x="25" y="32" font-size="20" text-anchor="middle">👩‍💻</text>
+                                            <!-- Cursor tag -->
+                                            <path d="M45 10 L50 28 L38 23 Z" fill="#10B981" />
+                                            <rect x="44" y="28" width="60" height="18" rx="4" fill="#10B981" />
+                                            <text x="74" y="41" fill="white" font-size="9" font-weight="bold" text-anchor="middle">UX Architect</text>
+                                        </g>
+                                        
+                                        <!-- Executive stakeholder -->
+                                        <g transform="translate(380, 230)" filter="url(#shadow-filter)">
+                                            <circle cx="25" cy="25" r="25" fill="#FEE2E2" />
+                                            <text x="25" y="32" font-size="20" text-anchor="middle">👨‍💼</text>
+                                            <path d="M10 20 L2 38 L14 33 Z" fill="#14B8A6" />
+                                            <rect x="-42" y="38" width="54" height="18" rx="4" fill="#14B8A6" />
+                                            <text x="-15" y="50" fill="white" font-size="9" font-weight="bold" text-anchor="middle">PM Sponsor</text>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 2: BUSINESS PROBLEMS -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-2" data-index="2">
+                        <div class="screen-content business-problems">
+                            <div class="problems-left">
+                                <span class="section-tag">Phase 01: Audit</span>
+                                <h2>The Cost of Core Workflow Friction</h2>
+                                <p class="description">Enterprise SaaS tools often fail due to workflow redundancy, fragmented communication, and data noise. Our audit reveals core problem vectors hurting organizational productivity.</p>
+                                
+                                <!-- Impact KPIs -->
+                                <div class="kpi-column">
+                                    <div class="kpi-micro-card">
+                                        <div class="kpi-val text-emerald">+45%</div>
+                                        <div class="kpi-desc">
+                                            <strong>Task Cycle Delay</strong>
+                                            <span>Manual handoffs add significant cycle duration</span>
+                                        </div>
+                                    </div>
+                                    <div class="kpi-micro-card">
+                                        <div class="kpi-val text-teal">$1.2k</div>
+                                        <div class="kpi-desc">
+                                            <strong>Adoption / Training Cost</strong>
+                                            <span>High overhead incurred per employee annually</span>
+                                        </div>
+                                    </div>
+                                    <div class="kpi-micro-card">
+                                        <div class="kpi-val text-red">38%</div>
+                                        <div class="kpi-desc">
+                                            <strong>Workflow Drop-offs</strong>
+                                            <span>Users abandon tasks due to navigation confusion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="problems-right">
+                                <div class="problems-grid">
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper red-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                        </div>
+                                        <h3>Workflow Inefficiencies</h3>
+                                        <p>Redundant data entry and excessive clicking to execute high-frequency operational tasks.</p>
+                                    </div>
+                                    
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper orange-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm14 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                        </div>
+                                        <h3>Poor Collaboration</h3>
+                                        <p>Siloed workspace tools lead to users taking screenshots and emailing details to coordinate resolutions.</p>
+                                    </div>
+
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper blue-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2m14 0V9a2 2 0 0 0-2-2M5 11V9a2 2 0 0 1 2-2m0 0V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M7 7h10"/></svg>
+                                        </div>
+                                        <h3>Fragmented Systems</h3>
+                                        <p>Users navigate across 4+ different legacy portals to consolidate a single custom business report.</p>
+                                    </div>
+
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper purple-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        </div>
+                                        <h3>Reporting Delays</h3>
+                                        <p>Batch processing and slow loading times prevent teams from accessing real-time, actionable business metrics.</p>
+                                    </div>
+
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper emerald-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+                                        </div>
+                                        <h3>Low User Adoption</h3>
+                                        <p>Complex interfaces prompt operational teams to bypass the SaaS platform and revert to custom Excel sheets.</p>
+                                    </div>
+
+                                    <div class="problem-card hover-glow">
+                                        <div class="problem-icon-wrapper teal-theme">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg>
+                                        </div>
+                                        <h3>Data Overload</h3>
+                                        <p>Key information is buried under heavy database grids without visual hierarchy or smart highlights.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 3: STAKEHOLDER ANALYSIS -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-3" data-index="3">
+                        <div class="screen-content stakeholder-analysis">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 02: Research</span>
+                                    <h2>Stakeholder Influence &amp; Ecosystem Map</h2>
+                                </div>
+                                <div class="legend">
+                                    <span class="legend-item"><span class="legend-dot green"></span>High Influence</span>
+                                    <span class="legend-item"><span class="legend-dot teal"></span>Medium Influence</span>
+                                </div>
+                            </div>
+
+                            <div class="stakeholder-map-wrapper">
+                                <!-- Connection Lines SVG Canvas (drawn dynamically by app.js) -->
+                                <svg id="stakeholder-connections" class="connections-overlay"></svg>
+
+                                <!-- Central Hub -->
+                                <div class="central-hub" id="stakeholder-hub">
+                                    <div class="inner-hub">
+                                        <h3>AeroFlow<br>SaaS</h3>
+                                        <span>Ecosystem</span>
+                                    </div>
+                                </div>
+
+                                <!-- Stakeholder Cards -->
+                                <div class="stakeholder-node" id="sh-exec" data-sh="exec" style="top: 15%; left: 10%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">👑</span>
+                                        <h4>Executive Sponsors</h4>
+                                        <span class="influence-badge high">High</span>
+                                    </div>
+                                    <p>Focuses on ARR, system consolidation, and long-term operating margin efficiency.</p>
+                                </div>
+
+                                <div class="stakeholder-node" id="sh-mgr" data-sh="mgr" style="top: 10%; right: 10%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">📈</span>
+                                        <h4>Operations Managers</h4>
+                                        <span class="influence-badge high">High</span>
+                                    </div>
+                                    <p>Needs team efficiency dashboards, simple workflow exception controls, and SLA tracking.</p>
+                                </div>
+
+                                <div class="stakeholder-node" id="sh-emp" data-sh="emp" style="bottom: 15%; left: 8%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">💻</span>
+                                        <h4>Daily Operators</h4>
+                                        <span class="influence-badge med">Medium</span>
+                                    </div>
+                                    <p>Values keyboard speed, data accessibility, automated triggers, and visual focus highlights.</p>
+                                </div>
+
+                                <div class="stakeholder-node" id="sh-cust" data-sh="cust" style="bottom: 12%; right: 12%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">🤝</span>
+                                        <h4>End Customers</h4>
+                                        <span class="influence-badge med">Medium</span>
+                                    </div>
+                                    <p>Impacted indirectly. Values rapid order processing, clear SLA tracking, and reliable reporting.</p>
+                                </div>
+
+                                <div class="stakeholder-node" id="sh-it" data-sh="it" style="top: 48%; left: 3%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">🛡️</span>
+                                        <h4>IT &amp; DevOps Security</h4>
+                                        <span class="influence-badge high">High</span>
+                                    </div>
+                                    <p>Requires strict compliance, simple custom SSO integrations, high SLA uptime, and API integrity.</p>
+                                </div>
+
+                                <div class="stakeholder-node" id="sh-support" data-sh="support" style="top: 48%; right: 3%;">
+                                    <div class="sh-card-header">
+                                        <span class="sh-avatar">📞</span>
+                                        <h4>Support &amp; Success</h4>
+                                        <span class="influence-badge med">Medium</span>
+                                    </div>
+                                    <p>Requires simple activity histories, rapid user session debugging tools, and modular permissions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 4: USER RESEARCH -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-4" data-index="4">
+                        <div class="screen-content user-research">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 02: Research</span>
+                                    <h2>User Research &amp; Usability Diagnostics</h2>
+                                </div>
+                                <div class="research-summary-badge">
+                                    Survey Base: <strong>N=1,245</strong> Active Users
+                                </div>
+                            </div>
+
+                            <!-- Research Stats Row -->
+                            <div class="research-stats-grid">
+                                <div class="stat-widget">
+                                    <span class="stat-num text-emerald">45</span>
+                                    <span class="stat-label">In-depth User Interviews</span>
+                                    <div class="stat-sub">Spanning 5 global business centers</div>
+                                </div>
+                                <div class="stat-widget">
+                                    <span class="stat-num text-teal">1.2k</span>
+                                    <span class="stat-label">Survey Responses</span>
+                                    <div class="stat-sub">Quantitative usability scoring</div>
+                                </div>
+                                <div class="stat-widget">
+                                    <span class="stat-num text-emerald">32</span>
+                                    <span class="stat-label">Usability Testing Sessions</span>
+                                    <div class="stat-sub">Identifying navigation friction points</div>
+                                </div>
+                                <div class="stat-widget">
+                                    <span class="stat-num text-teal">4</span>
+                                    <span class="stat-label">Co-Design Workshops</span>
+                                    <div class="stat-sub">Iterating wireframes with users</div>
+                                </div>
+                            </div>
+
+                            <!-- Research Visualizations -->
+                            <div class="research-visuals-row">
+                                <div class="chart-container-card">
+                                    <h3>Usability Score by Core Task Group</h3>
+                                    <div class="svg-chart-wrapper" id="bar-chart-container">
+                                        <svg viewBox="0 0 500 220" width="100%" height="100%" class="svg-chart-rendering">
+                                            <!-- Chart Axes -->
+                                            <line x1="60" y1="20" x2="60" y2="180" stroke="#E2E8F0" stroke-width="2"/>
+                                            <line x1="60" y1="180" x2="480" y2="180" stroke="#E2E8F0" stroke-width="2"/>
+                                            
+                                            <!-- Labels Y -->
+                                            <text x="50" y="25" text-anchor="end" font-size="10" fill="#64748B">100%</text>
+                                            <text x="50" y="65" text-anchor="end" font-size="10" fill="#64748B">75%</text>
+                                            <text x="50" y="105" text-anchor="end" font-size="10" fill="#64748B">50%</text>
+                                            <text x="50" y="145" text-anchor="end" font-size="10" fill="#64748B">25%</text>
+                                            <text x="50" y="180" text-anchor="end" font-size="10" fill="#64748B">0%</text>
+                                            
+                                            <!-- Bar 1 (Setup) -->
+                                            <rect x="90" y="100" width="45" height="80" rx="4" fill="#F1F5F9"/>
+                                            <rect x="90" y="100" width="45" height="80" rx="4" fill="#14B8A6"/>
+                                            <text x="112" y="195" text-anchor="middle" font-size="10" fill="#475569">Setup</text>
+                                            <text x="112" y="90" text-anchor="middle" font-size="10" font-weight="600" fill="#14B8A6">50%</text>
+
+                                            <!-- Bar 2 (Reporting) -->
+                                            <rect x="190" y="130" width="45" height="50" rx="4" fill="#F1F5F9"/>
+                                            <rect x="190" y="130" width="45" height="50" rx="4" fill="#E11D48"/>
+                                            <text x="212" y="195" text-anchor="middle" font-size="10" fill="#475569">Reporting</text>
+                                            <text x="212" y="120" text-anchor="middle" font-size="10" font-weight="600" fill="#E11D48">31%</text>
+
+                                            <!-- Bar 3 (Data Entry) -->
+                                            <rect x="290" y="80" width="45" height="100" rx="4" fill="#F1F5F9"/>
+                                            <rect x="290" y="80" width="45" height="100" rx="4" fill="#10B981"/>
+                                            <text x="312" y="195" text-anchor="middle" font-size="10" fill="#475569">Data Entry</text>
+                                            <text x="312" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#10B981">62%</text>
+
+                                            <!-- Bar 4 (Collaboration) -->
+                                            <rect x="390" y="145" width="45" height="35" rx="4" fill="#F1F5F9"/>
+                                            <rect x="390" y="145" width="45" height="35" rx="4" fill="#F59E0B"/>
+                                            <text x="412" y="195" text-anchor="middle" font-size="10" fill="#475569">Collaboration</text>
+                                            <text x="412" y="135" text-anchor="middle" font-size="10" font-weight="600" fill="#F59E0B">22%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="chart-container-card">
+                                    <h3>User Persona Breakdown</h3>
+                                    <div class="pie-chart-layout">
+                                        <div class="svg-chart-wrapper" id="donut-chart-container">
+                                            <svg viewBox="0 0 200 200" width="100%" height="100%">
+                                                <circle cx="100" cy="100" r="70" fill="none" stroke="#F1F5F9" stroke-width="25"/>
+                                                <!-- Operations (45%) -->
+                                                <circle cx="100" cy="100" r="70" fill="none" stroke="#10B981" stroke-width="25" stroke-dasharray="440" stroke-dashoffset="198" transform="rotate(-90 100 100)" stroke-linecap="round"/>
+                                                <!-- Managers (35%) -->
+                                                <circle cx="100" cy="100" r="70" fill="none" stroke="#14B8A6" stroke-width="25" stroke-dasharray="440" stroke-dashoffset="308" transform="rotate(64 100 100)" stroke-linecap="round"/>
+                                                <!-- Executives (20%) -->
+                                                <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="25" stroke-dasharray="440" stroke-dashoffset="352" transform="rotate(190 100 100)" stroke-linecap="round"/>
+                                                
+                                                <circle cx="100" cy="100" r="50" fill="white"/>
+                                                <text x="100" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F172A">Roles %</text>
+                                            </svg>
+                                        </div>
+                                        <div class="pie-legend">
+                                            <div class="legend-row">
+                                                <span class="legend-dot green"></span>
+                                                <span>45% Operators</span>
+                                            </div>
+                                            <div class="legend-row">
+                                                <span class="legend-dot teal"></span>
+                                                <span>35% Managers</span>
+                                            </div>
+                                            <div class="legend-row">
+                                                <span class="legend-dot yellow"></span>
+                                                <span>20% Executives</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insights-card">
+                                    <h3>Key Research Inferences</h3>
+                                    <ul class="insights-list">
+                                        <li>
+                                            <span class="insight-num">01</span>
+                                            <p><strong>System Latency Impact:</strong> Slow response times compound user navigation layout friction, lowering system trust.</p>
+                                        </li>
+                                        <li>
+                                            <span class="insight-num">02</span>
+                                            <p><strong>Information Blindspots:</strong> Important action triggers are hidden within secondary grids, causing workflow bottlenecks.</p>
+                                        </li>
+                                        <li>
+                                            <span class="insight-num">03</span>
+                                            <p><strong>Manual Reporting Overhead:</strong> Users spend 3.5 hours weekly formatting report exports outside the tool.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 5: USER PERSONAS -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-5" data-index="5">
+                        <div class="screen-content user-personas">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 02: Research</span>
+                                    <h2>Primary User Personas</h2>
+                                </div>
+                                <span class="badge">Target SaaS Demographics</span>
+                            </div>
+
+                            <!-- 3 Persona Cards Grid -->
+                            <div class="personas-grid">
+                                <!-- Operations Manager -->
+                                <div class="persona-card active-persona" data-persona="1">
+                                    <div class="persona-header">
+                                        <div class="persona-avatar-bg font-large">👩‍💼</div>
+                                        <div class="persona-meta">
+                                            <h3>Sarah Chen</h3>
+                                            <span class="persona-role">Operations VP</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="persona-body">
+                                        <div class="persona-field">
+                                            <span class="field-title">Core Goal</span>
+                                            <p>Monitor SLA compliance across 3 international logistics channels.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Key Pain Point</span>
+                                            <p>System lags when loading custom analytics dashboards, forcing daily spreadsheet backups.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Tech Literacy</span>
+                                            <div class="skill-bar-wrapper">
+                                                <div class="skill-fill" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="preferred-tools">
+                                            <span class="tool-tag">Excel</span>
+                                            <span class="tool-tag">Slack</span>
+                                            <span class="tool-tag">Tableau</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Team Lead -->
+                                <div class="persona-card" data-persona="2">
+                                    <div class="persona-header">
+                                        <div class="persona-avatar-bg font-large">👨‍💻</div>
+                                        <div class="persona-meta">
+                                            <h3>Michael Torres</h3>
+                                            <span class="persona-role">Warehouse Lead</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="persona-body">
+                                        <div class="persona-field">
+                                            <span class="field-title">Core Goal</span>
+                                            <p>Distribute workflow tickets, triage errors, and maintain dispatch speeds.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Key Pain Point</span>
+                                            <p>Inefficient navigation blocks rapid dispatch ticket updates, slowing operations.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Tech Literacy</span>
+                                            <div class="skill-bar-wrapper">
+                                                <div class="skill-fill" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="preferred-tools">
+                                            <span class="tool-tag">Jira</span>
+                                            <span class="tool-tag">Mobile SaaS</span>
+                                            <span class="tool-tag">Teams</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Executive VP -->
+                                <div class="persona-card" data-persona="3">
+                                    <div class="persona-header">
+                                        <div class="persona-avatar-bg font-large">👨‍💼</div>
+                                        <div class="persona-meta">
+                                            <h3>David Kimball</h3>
+                                            <span class="persona-role">VP of Logistics</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="persona-body">
+                                        <div class="persona-field">
+                                            <span class="field-title">Core Goal</span>
+                                            <p>Optimize long-term operating costs and approve department budgets.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Key Pain Point</span>
+                                            <p>Interface displays noise instead of high-level business health trends.</p>
+                                        </div>
+                                        <div class="persona-field">
+                                            <span class="field-title">Tech Literacy</span>
+                                            <div class="skill-bar-wrapper">
+                                                <div class="skill-fill" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="preferred-tools">
+                                            <span class="tool-tag">Outlook</span>
+                                            <span class="tool-tag">PDF Reports</span>
+                                            <span class="tool-tag">iPad UX</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 6: CUSTOMER JOURNEY MAP -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-6" data-index="6">
+                        <div class="screen-content customer-journey">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 02: Analysis</span>
+                                    <h2>End-to-End User Experience Journey Map</h2>
+                                </div>
+                                <span class="badge">Persona: Sarah Chen (Ops Manager)</span>
+                            </div>
+
+                            <!-- Horizontal Journey Grid -->
+                            <div class="journey-table-wrapper">
+                                <div class="journey-stages">
+                                    <!-- Stage 1 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-1">1. DISCOVER</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Identifies reporting issue, opens portal</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"Where is the daily custom logistics table?"</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node neutral">😐</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>Confusing menu titles, slow homepage load</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Consolidated portal view, smart dashboard widgets</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stage 2 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-2">2. ONBOARD</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Navigates parameters config wizard</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"This wizard has 15 fields. Are all mandatory?"</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node sad">😞</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>Zero default filters, manual text inputs required</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Contextual tooltips, autofill from user profile</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stage 3 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-3">3. DAILY WORK</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Runs operational analytics queries</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"The system is laggy. I hope it doesn't crash."</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node sad">😫</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>Page freeze on heavy data queries</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Paginated tables, virtual loading cards</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stage 4 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-4">4. COLLABORATE</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Emails data snippet anomalies to team</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"I'll take a screenshot of this bug."</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node neutral">😐</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>No internal sharing or comment tools</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Shareable report links and notes feature</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stage 5 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-5">5. REPORTING</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Generates Weekly SLA chart for execs</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"Formatting this graph manually takes hours."</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node sad">😞</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>Charts export as static, low-quality PNGs</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Interactive SVG charts and live dashboard embeds</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stage 6 -->
+                                    <div class="journey-stage-column">
+                                        <div class="stage-header stage-6">6. OPTIMIZE</div>
+                                        <div class="stage-body">
+                                            <div class="j-row"><span class="j-row-title">User Action</span><p>Configures custom alert thresholds</p></div>
+                                            <div class="j-row"><span class="j-row-title">Thoughts</span><p>"Finally setup. Hopefully this saves time tomorrow."</p></div>
+                                            <div class="j-row emotion-box">
+                                                <span class="j-row-title">Emotion</span>
+                                                <div class="emotion-node happy">😊</div>
+                                            </div>
+                                            <div class="j-row"><span class="j-row-title">Pain Point</span><p>Settings hidden in obscure sub-menu</p></div>
+                                            <div class="j-row"><span class="j-row-title">Opportunity</span><p>Promote setup options directly on dashboard home</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 7: INFORMATION ARCHITECTURE -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-7" data-index="7">
+                        <div class="screen-content sitemap-ia">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 03: Architecture</span>
+                                    <h2>Proposed Information Architecture (Sitemap)</h2>
+                                </div>
+                                <span class="badge">Consolidated SaaS Tree</span>
+                            </div>
+
+                            <!-- Hierarchical Navigation Tree -->
+                            <div class="ia-tree-container">
+                                <!-- Root Navigation -->
+                                <div class="ia-level root-level">
+                                    <div class="ia-node root hover-glow">
+                                        <span class="node-icon">🏠</span>
+                                        <div class="node-content">
+                                            <strong>AeroFlow SaaS Root</strong>
+                                            <span>Universal Navigation</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Level 1 Categories -->
+                                <div class="ia-branches">
+                                    <!-- Column 1: Core Dashboard -->
+                                    <div class="ia-branch-column">
+                                        <div class="ia-node branch hover-glow">
+                                            <span class="node-icon">📊</span>
+                                            <div class="node-content">
+                                                <strong>1.0 Dashboard</strong>
+                                                <span>Work Overview</span>
+                                            </div>
+                                        </div>
+                                        <div class="ia-sub-nodes">
+                                            <div class="ia-node leaf">1.1 SLA Metrics</div>
+                                            <div class="ia-node leaf">1.2 Task Queue</div>
+                                            <div class="ia-node leaf">1.3 Custom Widgets</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Column 2: Analytics -->
+                                    <div class="ia-branch-column">
+                                        <div class="ia-node branch hover-glow">
+                                            <span class="node-icon">📈</span>
+                                            <div class="node-content">
+                                                <strong>2.0 Analytics</strong>
+                                                <span>Data Discovery</span>
+                                            </div>
+                                        </div>
+                                        <div class="ia-sub-nodes">
+                                            <div class="ia-node leaf">2.1 Custom Query Builder</div>
+                                            <div class="ia-node leaf">2.2 Report Generator</div>
+                                            <div class="ia-node leaf">2.3 Export Manager</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Column 3: Operations -->
+                                    <div class="ia-branch-column">
+                                        <div class="ia-node branch hover-glow">
+                                            <span class="node-icon">⚙️</span>
+                                            <div class="node-content">
+                                                <strong>3.0 Operations</strong>
+                                                <span>Workflow Triage</span>
+                                            </div>
+                                        </div>
+                                        <div class="ia-sub-nodes">
+                                            <div class="ia-node leaf">3.1 Dispatch Panel</div>
+                                            <div class="ia-node leaf">3.2 Exceptions Hub</div>
+                                            <div class="ia-node leaf">3.3 Order Tracks</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Column 4: System Admin -->
+                                    <div class="ia-branch-column">
+                                        <div class="ia-node branch hover-glow">
+                                            <span class="node-icon">🛡️</span>
+                                            <div class="node-content">
+                                                <strong>4.0 System Admin</strong>
+                                                <span>Control Center</span>
+                                            </div>
+                                        </div>
+                                        <div class="ia-sub-nodes">
+                                            <div class="ia-node leaf">4.1 Team Permissions</div>
+                                            <div class="ia-node leaf">4.2 Security Audit Logs</div>
+                                            <div class="ia-node leaf">4.3 API Integrations</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 8: WIREFRAMES -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-8" data-index="8">
+                        <div class="screen-content wireframes-page">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 03: Ideation</span>
+                                    <h2>Low-Fidelity Blueprint Wireframes</h2>
+                                </div>
+                                <span class="badge font-mono">Layout Verification</span>
+                            </div>
+
+                            <!-- 2x2 Grid of Wireframes -->
+                            <div class="wireframe-grid">
+                                <!-- Wireframe 1: Home Dashboard -->
+                                <div class="wf-card">
+                                    <div class="wf-header">
+                                        <span>WF-01: Home Dashboard</span>
+                                        <span class="wf-scale">1:10 Scale</span>
+                                    </div>
+                                    <div class="wf-preview blueprint">
+                                        <div class="wf-sidebar-skeleton"></div>
+                                        <div class="wf-main-skeleton">
+                                            <div class="wf-row-skeletons">
+                                                <div class="wf-box-skeleton"></div>
+                                                <div class="wf-box-skeleton"></div>
+                                                <div class="wf-box-skeleton"></div>
+                                            </div>
+                                            <div class="wf-hero-skeleton">
+                                                <div class="wf-placeholder-cross"></div>
+                                            </div>
+                                        </div>
+                                        <div class="wf-sticky-note note-1">Unified KPIs</div>
+                                    </div>
+                                </div>
+
+                                <!-- Wireframe 2: Analytics Query -->
+                                <div class="wf-card">
+                                    <div class="wf-header">
+                                        <span>WF-02: Analytics Query Builder</span>
+                                        <span class="wf-scale">1:10 Scale</span>
+                                    </div>
+                                    <div class="wf-preview blueprint">
+                                        <div class="wf-sidebar-skeleton"></div>
+                                        <div class="wf-main-skeleton">
+                                            <div class="wf-filter-row-skeleton"></div>
+                                            <div class="wf-graph-skeleton">
+                                                <div class="wf-placeholder-cross"></div>
+                                            </div>
+                                        </div>
+                                        <div class="wf-sticky-note note-2">Sticky Filters</div>
+                                    </div>
+                                </div>
+
+                                <!-- Wireframe 3: Exception Manager -->
+                                <div class="wf-card">
+                                    <div class="wf-header">
+                                        <span>WF-03: Exception Manager</span>
+                                        <span class="wf-scale">1:10 Scale</span>
+                                    </div>
+                                    <div class="wf-preview blueprint">
+                                        <div class="wf-sidebar-skeleton"></div>
+                                        <div class="wf-main-skeleton">
+                                            <div class="wf-list-layout-skeleton">
+                                                <div class="wf-list-item-skeleton"></div>
+                                                <div class="wf-list-item-skeleton"></div>
+                                                <div class="wf-list-item-skeleton"></div>
+                                                <div class="wf-list-item-skeleton"></div>
+                                            </div>
+                                        </div>
+                                        <div class="wf-sticky-note note-3">Status Badges</div>
+                                    </div>
+                                </div>
+
+                                <!-- Wireframe 4: Access Permissions -->
+                                <div class="wf-card">
+                                    <div class="wf-header">
+                                        <span>WF-04: Access Permissions</span>
+                                        <span class="wf-scale">1:10 Scale</span>
+                                    </div>
+                                    <div class="wf-preview blueprint">
+                                        <div class="wf-sidebar-skeleton"></div>
+                                        <div class="wf-main-skeleton">
+                                            <div class="wf-header-skeleton"></div>
+                                            <div class="wf-grid-layout-skeleton"></div>
+                                        </div>
+                                        <div class="wf-sticky-note note-4">Visual Roles</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 9: ENTERPRISE DASHBOARD UI -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-9" data-index="9">
+                        <div class="screen-content hifi-dashboard-ui">
+                            <!-- Sidebar -->
+                            <aside class="dashboard-sidebar">
+                                <div class="sidebar-top">
+                                    <div class="db-logo">
+                                        <span class="logo-dot"></span>
+                                        <span>AeroFlow</span>
+                                    </div>
+                                    <nav class="db-nav">
+                                        <a href="#" class="nav-item active">
+                                            <span class="nav-icon">📊</span>
+                                            <span>Dashboard</span>
+                                        </a>
+                                        <a href="#" class="nav-item">
+                                            <span class="nav-icon">📈</span>
+                                            <span>Analytics</span>
+                                        </a>
+                                        <a href="#" class="nav-item">
+                                            <span class="nav-icon">⚙️</span>
+                                            <span>Operations</span>
+                                            <span class="badge-count">12</span>
+                                        </a>
+                                        <a href="#" class="nav-item">
+                                            <span class="nav-icon">🛡️</span>
+                                            <span>Admin Panel</span>
+                                        </a>
+                                        <a href="#" class="nav-item">
+                                            <span class="nav-icon">🛠️</span>
+                                            <span>Integrations</span>
+                                        </a>
+                                    </nav>
+                                </div>
+                                <div class="sidebar-bottom">
+                                    <a href="#" class="nav-item">
+                                        <span class="nav-icon">❓</span>
+                                        <span>Help Center</span>
+                                    </a>
+                                    <a href="#" class="nav-item">
+                                        <span class="nav-icon">⚙️</span>
+                                        <span>Settings</span>
+                                    </a>
+                                </div>
+                            </aside>
+
+                            <!-- Dashboard Main Area -->
+                            <div class="dashboard-main">
+                                <!-- Top Bar -->
+                                <header class="dashboard-header">
+                                    <div class="search-bar-wrapper">
+                                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                        <input type="text" placeholder="Search workflows, metrics, users..." class="search-input">
+                                    </div>
+                                    
+                                    <div class="header-actions">
+                                        <button class="icon-action-btn" id="db-alert-toggle" title="Notifications">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                            <span class="alert-dot-badge"></span>
+                                        </button>
+                                        <span class="divider-v"></span>
+                                        <div class="profile-chip">
+                                            <div class="avatar-small">SC</div>
+                                            <span class="user-name">Sarah Chen</span>
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        </div>
+                                    </div>
+                                </header>
+
+                                <!-- Dashboard Dashboard Content -->
+                                <div class="dashboard-content-scroll">
+                                    <!-- Dynamic header greeting and date filter -->
+                                    <div class="db-subheader">
+                                        <div>
+                                            <h2>Welcome Back, Sarah</h2>
+                                            <p class="subtitle-text">System performance and team dispatch workflows look stable today.</p>
+                                        </div>
+                                        <div class="date-filter-group">
+                                            <button class="filter-btn active">Live</button>
+                                            <button class="filter-btn">24h</button>
+                                            <button class="filter-btn">7d</button>
+                                            <button class="filter-btn">30d</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4 KPI Cards Grid -->
+                                    <div class="db-kpi-grid">
+                                        <div class="kpi-card hover-glow">
+                                            <div class="kpi-card-header">
+                                                <span class="kpi-title">Total Active ARR</span>
+                                                <span class="kpi-trend positive">+12.4%</span>
+                                            </div>
+                                            <div class="kpi-value">$1,245,200</div>
+                                            <svg class="sparkline" viewBox="0 0 100 30" width="100%" height="30">
+                                                <path d="M0 25 L15 20 L30 28 L45 15 L60 22 L75 10 L90 5 L100 8" fill="none" stroke="#10B981" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+
+                                        <div class="kpi-card hover-glow">
+                                            <div class="kpi-card-header">
+                                                <span class="kpi-title">Active Workflows</span>
+                                                <span class="kpi-trend positive">+4.2%</span>
+                                            </div>
+                                            <div class="kpi-value">4,812 / 5k</div>
+                                            <svg class="sparkline" viewBox="0 0 100 30" width="100%" height="30">
+                                                <path d="M0 20 L20 18 L40 22 L60 15 L80 18 L100 10" fill="none" stroke="#14B8A6" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+
+                                        <div class="kpi-card hover-glow">
+                                            <div class="kpi-card-header">
+                                                <span class="kpi-title">SLA Compliance</span>
+                                                <span class="kpi-trend neutral">0.0%</span>
+                                            </div>
+                                            <div class="kpi-value">99.98%</div>
+                                            <svg class="sparkline" viewBox="0 0 100 30" width="100%" height="30">
+                                                <path d="M0 5 L20 5 L40 5 L60 5 L80 6 L100 5" fill="none" stroke="#10B981" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+
+                                        <div class="kpi-card hover-glow">
+                                            <div class="kpi-card-header">
+                                                <span class="kpi-title">Average Task Time</span>
+                                                <span class="kpi-trend negative">-18.4%</span>
+                                            </div>
+                                            <div class="kpi-value">1.8m <span class="unit">cycle</span></div>
+                                            <svg class="sparkline" viewBox="0 0 100 30" width="100%" height="30">
+                                                <path d="M0 5 L20 10 L40 15 L60 22 L80 25 L100 28" fill="none" stroke="#E11D48" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Chart & Recent Activities Row -->
+                                    <div class="db-visuals-grid">
+                                        <!-- Main Productivity Line Area Chart -->
+                                        <div class="db-chart-card">
+                                            <div class="chart-header">
+                                                <h3>Workspace Process Throughput</h3>
+                                                <select class="chart-metric-select">
+                                                    <option>Completed Tasks</option>
+                                                    <option>Exception Rates</option>
+                                                    <option>Active Connections</option>
+                                                </select>
+                                            </div>
+                                            <div class="main-svg-chart-wrapper">
+                                                <svg viewBox="0 0 600 240" width="100%" height="100%">
+                                                    <defs>
+                                                        <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
+                                                            <stop offset="0%" stop-color="#10B981" stop-opacity="0.3"/>
+                                                            <stop offset="100%" stop-color="#10B981" stop-opacity="0.0"/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                    <!-- Grid lines -->
+                                                    <line x1="50" y1="30" x2="560" y2="30" stroke="#F1F5F9" stroke-width="1"/>
+                                                    <line x1="50" y1="80" x2="560" y2="80" stroke="#F1F5F9" stroke-width="1"/>
+                                                    <line x1="50" y1="130" x2="560" y2="130" stroke="#F1F5F9" stroke-width="1"/>
+                                                    <line x1="50" y1="180" x2="560" y2="180" stroke="#F1F5F9" stroke-width="1"/>
+                                                    <line x1="50" y1="210" x2="560" y2="210" stroke="#E2E8F0" stroke-width="2"/>
+
+                                                    <!-- Chart Area Path -->
+                                                    <path d="M50 210 L50 150 L120 180 L195 110 L270 140 L345 80 L420 90 L495 50 L560 65 L560 210 Z" fill="url(#area-grad)"/>
+
+                                                    <!-- Chart Line Path -->
+                                                    <path d="M50 150 L120 180 L195 110 L270 140 L345 80 L420 90 L495 50 L560 65" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+
+                                                    <!-- Chart Data Nodes -->
+                                                    <circle cx="195" cy="110" r="5" fill="white" stroke="#10B981" stroke-width="2"/>
+                                                    <circle cx="345" cy="80" r="5" fill="white" stroke="#10B981" stroke-width="2"/>
+                                                    <circle cx="495" cy="50" r="5" fill="white" stroke="#10B981" stroke-width="2"/>
+
+                                                    <!-- Labels -->
+                                                    <text x="50" y="225" font-size="10" fill="#94A3B8" text-anchor="middle">Mon</text>
+                                                    <text x="195" y="225" font-size="10" fill="#94A3B8" text-anchor="middle">Wed</text>
+                                                    <text x="345" y="225" font-size="10" fill="#94A3B8" text-anchor="middle">Fri</text>
+                                                    <text x="495" y="225" font-size="10" fill="#94A3B8" text-anchor="middle">Sun</text>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <!-- Recent Exceptions / Activities Feed -->
+                                        <div class="db-feed-card">
+                                            <h3>Operational Exceptions</h3>
+                                            <div class="feed-list">
+                                                <div class="feed-item unread">
+                                                    <div class="feed-dot red"></div>
+                                                    <div class="feed-content">
+                                                        <div class="feed-title">SLA breach on Channel #4</div>
+                                                        <span class="feed-time">2 mins ago • Michael Torres</span>
+                                                    </div>
+                                                </div>
+                                                <div class="feed-item">
+                                                    <div class="feed-dot orange"></div>
+                                                    <div class="feed-content">
+                                                        <div class="feed-title">System Latency Peak (1,800ms)</div>
+                                                        <span class="feed-time">45 mins ago • IT Security</span>
+                                                    </div>
+                                                </div>
+                                                <div class="feed-item">
+                                                    <div class="feed-dot green"></div>
+                                                    <div class="feed-content">
+                                                        <div class="feed-title">Weekly reports auto-generated</div>
+                                                        <span class="feed-time">2 hours ago • System Bot</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Data Table Section -->
+                                    <div class="db-table-card">
+                                        <div class="table-header-row">
+                                            <h3>Active Dispatch Workflows</h3>
+                                            <button class="table-action-btn">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                                                <span>Export CSV</span>
+                                            </button>
+                                        </div>
+                                        
+                                        <table class="db-data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Workflow ID</th>
+                                                    <th>Assigned Operator</th>
+                                                    <th>Region</th>
+                                                    <th>Compliance SLA</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>#WF-9082</strong></td>
+                                                    <td>
+                                                        <div class="user-chip">
+                                                            <div class="avatar-table bg-teal">MT</div>
+                                                            <span>Michael Torres</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>North America</td>
+                                                    <td>
+                                                        <div class="progress-track">
+                                                            <div class="progress-bar-fill green" style="width: 95%;"></div>
+                                                        </div>
+                                                        <span class="progress-text">95%</span>
+                                                    </td>
+                                                    <td><span class="status-badge green-badge">Active</span></td>
+                                                    <td><button class="action-menu-btn">•••</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>#WF-9079</strong></td>
+                                                    <td>
+                                                        <div class="user-chip">
+                                                            <div class="avatar-table bg-orange">JC</div>
+                                                            <span>Jane Cooper</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>European Union</td>
+                                                    <td>
+                                                        <div class="progress-track">
+                                                            <div class="progress-bar-fill orange" style="width: 78%;"></div>
+                                                        </div>
+                                                        <span class="progress-text">78%</span>
+                                                    </td>
+                                                    <td><span class="status-badge orange-badge">Warning</span></td>
+                                                    <td><button class="action-menu-btn">•••</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>#WF-9072</strong></td>
+                                                    <td>
+                                                        <div class="user-chip">
+                                                            <div class="avatar-table bg-slate">AS</div>
+                                                            <span>Albert Flores</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Asia Pacific</td>
+                                                    <td>
+                                                        <div class="progress-track">
+                                                            <div class="progress-bar-fill red" style="width: 45%;"></div>
+                                                        </div>
+                                                        <span class="progress-text">45%</span>
+                                                    </td>
+                                                    <td><span class="status-badge red-badge">Critical</span></td>
+                                                    <td><button class="action-menu-btn">•••</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========================================== -->
+                    <!-- SCREEN 10: UX STRATEGY ROADMAP -->
+                    <!-- ========================================== -->
+                    <section class="ux-screen" id="screen-10" data-index="10">
+                        <div class="screen-content roadmap-page">
+                            <div class="section-header-row">
+                                <div>
+                                    <span class="section-tag">Phase 05: Delivery</span>
+                                    <h2>UX Strategy &amp; Engineering Implementation Roadmap</h2>
+                                </div>
+                                <span class="badge">AeroFlow SaaS Product Launch</span>
+                            </div>
+
+                            <!-- Horizontal Timeline Roadmap -->
+                            <div class="roadmap-timeline-wrapper">
+                                <div class="timeline-line"></div>
+                                
+                                <div class="roadmap-stages">
+                                    <!-- Stage 1 -->
+                                    <div class="roadmap-stage-card hover-glow">
+                                        <div class="phase-badge green-badge">Phase 1: Research</div>
+                                        <h3>Discovery &amp; Audit</h3>
+                                        <span class="duration">Month 1 - 2</span>
+                                        <ul class="deliverables-list">
+                                            <li>45 Operator Interviews</li>
+                                            <li>Usability Diagnostics Audit</li>
+                                            <li>Stakeholder Influence Maps</li>
+                                        </ul>
+                                        <div class="stage-metric">Success: Alignment Signoff</div>
+                                    </div>
+
+                                    <!-- Stage 2 -->
+                                    <div class="roadmap-stage-card hover-glow">
+                                        <div class="phase-badge teal-badge">Phase 2: Definition</div>
+                                        <h3>IA &amp; Core Journeys</h3>
+                                        <span class="duration">Month 3</span>
+                                        <ul class="deliverables-list">
+                                            <li>Sitemap &amp; Menu Consolidation</li>
+                                            <li>End-to-End Persona Paths</li>
+                                            <li>Cross-Application Data IA</li>
+                                        </ul>
+                                        <div class="stage-metric">Success: IA Validation Check</div>
+                                    </div>
+
+                                    <!-- Stage 3 -->
+                                    <div class="roadmap-stage-card hover-glow">
+                                        <div class="phase-badge green-badge">Phase 3: Design</div>
+                                        <h3>Hi-Fi Prototyping</h3>
+                                        <span class="duration">Month 4 - 5</span>
+                                        <ul class="deliverables-list">
+                                            <li>Component Design Library</li>
+                                            <li>Responsive Dashboard UI</li>
+                                            <li>Interactive Prototype Builds</li>
+                                        </ul>
+                                        <div class="stage-metric">Success: 95% Figma Coverage</div>
+                                    </div>
+
+                                    <!-- Stage 4 -->
+                                    <div class="roadmap-stage-card hover-glow">
+                                        <div class="phase-badge teal-badge">Phase 4: Test</div>
+                                        <h3>Validation &amp; Rework</h3>
+                                        <span class="duration">Month 6</span>
+                                        <ul class="deliverables-list">
+                                            <li>32 Quantitative Usability Tests</li>
+                                            <li>Keyboard Speed Benchmarks</li>
+                                            <li>Contrast &amp; Accessibility Audit</li>
+                                        </ul>
+                                        <div class="stage-metric">Success: SUS Score &gt; 80</div>
+                                    </div>
+
+                                    <!-- Stage 5 -->
+                                    <div class="roadmap-stage-card hover-glow">
+                                        <div class="phase-badge dark-badge">Phase 5: Deploy</div>
+                                        <h3>Engineering &amp; Review</h3>
+                                        <span class="duration">Month 7+</span>
+                                        <ul class="deliverables-list">
+                                            <li>Component Handoff docs</li>
+                                            <li>UAT Visual Review cycles</li>
+                                            <li>Post-launch NPS Analysis</li>
+                                        </ul>
+                                        <div class="stage-metric">Success: 45% Task Speedup</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>
